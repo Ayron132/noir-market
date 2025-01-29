@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault()
     try {
       await signIn(email, password)
-      router.push("/")
+      router.push("/market")
     } catch (error) {
       console.error("Error signing in: ", error)
       alert("Falha no login. Por favor, verifique suas credenciais.")
@@ -25,7 +25,7 @@ export default function Login() {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-      router.push("/")
+      router.push("/market")
     } catch (error) {
       console.error("Error signing in with Google: ", error)
       alert("Falha no login com Google. Por favor, tente novamente.")

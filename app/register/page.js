@@ -20,7 +20,7 @@ export default function Register() {
     }
     try {
       await signUp(email, password)
-      router.push("/")
+      router.push("/market")
     } catch (error) {
       console.error("Error signing up: ", error)
       alert("Falha no registro. Por favor, tente novamente.")
@@ -30,7 +30,7 @@ export default function Register() {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-      router.push("/")
+      router.push("/market")
     } catch (error) {
       console.error("Error signing in with Google: ", error)
       alert("Falha no registro com Google. Por favor, tente novamente.")

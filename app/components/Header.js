@@ -16,7 +16,7 @@ export default function Header() {
           <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <Menu size={24} />
           </button>
-          <Link href="/" className="text-xl font-medium">
+          <Link href="/market" className="text-xl font-medium">
             Noir Market
           </Link>
         </div>
@@ -54,7 +54,7 @@ export default function Header() {
                 <Link href="/profile" className="hover:text-accent transition-colors">
                   Perfil
                 </Link>
-                <button onClick={signOut} className="text-gray-600 hover:text-gray-900 text-left">
+                <button onClick={signOut} className=" text-left">
                   Sair
                 </button>
               </>
