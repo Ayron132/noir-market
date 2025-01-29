@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../firebase"
 import ProductCard from "../components/ProductCard"
@@ -8,6 +8,14 @@ import ProductFilters from "../components/ProductFilters"
 import { useSearchParams } from "next/navigation"
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <ProductsContent />
+    </Suspense>
+  )
+}
+
+function ProductsContent() {
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
   const [filters, setFilters] = useState({
@@ -90,4 +98,3 @@ export default function ProductsPage() {
     </div>
   )
 }
-
